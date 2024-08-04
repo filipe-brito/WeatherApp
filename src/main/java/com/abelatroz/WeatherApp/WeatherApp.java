@@ -28,12 +28,12 @@ public class WeatherApp {
 			int responseCode = connection.getResponseCode();
 			System.out.println("código da resposta: " + responseCode);
 			if(responseCode == 200) {
-				scan = new Scanner(connection.getInputStream());
+				Scanner responseScanner = new Scanner(connection.getInputStream());
 				StringBuilder response = new StringBuilder();
-				while(scan.hasNext()){
-					response.append(scan.nextLine());
+				while(responseScanner.hasNext()){
+					response.append(responseScanner.nextLine());
 				}
-				scan.close();
+				responseScanner.close();
 				
 				System.out.println("Resposta da API: " + response.toString());
 			}else {
