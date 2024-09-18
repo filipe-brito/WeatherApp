@@ -2,7 +2,10 @@ package com.abelatroz.WeatherApp;
 
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
+import java.net.URI;
 import java.net.URL;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -13,20 +16,21 @@ public class WeatherApp {
 	
 	private static final String API_KEY = "365ba3b15a813aa62f189fcc4daa3d84"; // Substitua com sua chave da API
 
-	public static void main(String[] args) {
-		Scanner scan = new Scanner(System.in);
+	public static String getWeather(String city) {
+		
+		String cityCoded = null;
+		try {
+			cityCoded = URLEncoder.encode(city, StandardCharsets.UTF_8.toString());
+		} catch (Exception e) {
+			return "Erro na codificação do nome da cidade: " + e.getMessage();
+		}
 		
 		
-		System.out.print("Digite o nome da cidade: ");
-		String city = scan.next();
-		
-		scan.close();
-		
-		
-		String apiUrl = String.format("http://api.openweathermap.org/data/2.5/forecast?q=%s&appid=%s", city, API_KEY);
+		String apiUrl = String.format("http://api.openweathermap.org/data/2.5/forecast?q=%s&appid=%s", cityCoded, API_KEY);
 		
 		try {
-			URL url = new URL(apiUrl);
+			URI uri = new URI(apiUrl);
+			URL url = uri.toURL();
 			HttpURLConnection connection= (HttpURLConnection) url.openConnection();
 			connection.setRequestMethod("GET");
 			int responseCode = connection.getResponseCode();
@@ -46,21 +50,22 @@ public class WeatherApp {
 			    // Obtendo a data e hora da previsão
 			    long timestamp = firstWeatherEntry.getLong("dt");
 			    Date date = new Date(timestamp * 1000); // Converter para milissegundos
-			    System.out.println("Data e hora da previsão: " + date.toString());
+			    String weatherDate = date.toString();
 
 			    JSONObject main = firstWeatherEntry.getJSONObject("main");
 			    double temperatureInKelvin = main.getDouble("temp");
 			    double temperatureInCelsius = temperatureInKelvin - 273.15;
 			    
-			    System.out.printf("Temperatura: %.2f°C\n", temperatureInCelsius);
+			    return String.format("Data e hora da previsão: %s\nTemperatura: %.2f°C", weatherDate, temperatureInCelsius);
+			    
 			}else {
-				System.out.println("Erro na requisição: " + responseCode);
+				return "Erro na requisição: " + responseCode;
 			}
 		}catch (MalformedURLException e) {
-		    System.out.println("URL malformada: " + e.getMessage());
+		    return "URL malformada: " + e.getMessage();
 			
 		} catch (Exception e) {
-		    e.printStackTrace();
+		    return "Erro inesperado: " + e.getMessage();
 		}
 	}
 
