@@ -1,4 +1,54 @@
-* {
+.root {
 	-fx-font-family: "Pixelify Sans Medium";
+    -fx-padding: 20px; /* Espaçamento interno das bordas do VBox */
+    
+    -fx-background-color: linear-gradient(to top, #7acaff, #008efe);
+}
+
+#cityInput {
 	-fx-font-size: 18px;
+	
+	-fx-background-color: transparent; /* Remove a cor de fundo */
+	
+	-fx-border-width: 2px; /* largura da borda */
+	-fx-border-color: #001400; /*Define a cor da borda*/
+	
+	-fx-min-width: 220px;
+	-fx-max-width: 220px;
+    -fx-min-height: 40px;
+    -fx-max-height: 40px;
+}
+
+/* Estilo do botão principal */
+#getWeatherButton {	
+    -fx-background-color: transparent; /* É necessário aplicar isso para limpar o estilo padrão que o javafx coloca no botão */
+    -fx-background-image: url('images/button.png');
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 115% 180px; /* Faz o fundo cobrir toda a área */
+    -fx-background-position: center;
+    
+    -fx-padding: 0; /* reseta o padding */
+    -fx-padding: 0 0 5px 0;
+    
+    
+    -fx-cursor: hand; /* Mudança do cursor ao passar o mouse */
+    
+    -fx-min-width: 180px;
+    -fx-max-width: 180px;
+    -fx-min-height: 80px;
+    -fx-max-height: 80px;
+}
+
+#buttonText {
+	-fx-font-family: "Pixelify Sans";
+	-fx-font-size: 20px;
+}
+
+#weatherOutput {
+    -fx-font-size: 18px; /* Tamanho da fonte do rótulo */
+    -fx-alignment: center; /* Centraliza o texto no rótulo */
+    -fx-padding: 5px 15px 5px 15px;
+    
+    -fx-background-color: #F0F0F0; /* Cor de fundo desejada */
+    -fx-border-radius: 5px; /* Arredondamento dos cantos da borda */
 }
