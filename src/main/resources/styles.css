@@ -1,0 +1,195 @@
+/**/
+.root {
+	-fx-font-family: "Arial";
+    -fx-font-size: 14px;
+    -fx-background-color: linear-gradient(to top left, #010101, #5F2BE8);
+    -fx-padding: 110 200 0 200;
+}
+
+.titleBox {
+	-fx-alignment: center;
+}
+
+.titleBox .label-title {	
+	-fx-font-family: "Fipps";
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-text-fill: yellow;
+}
+
+.searchSection {
+	-fx-alignment: center;
+}
+
+.searchSection .cityInput {
+	-fx-font-family: "Pixelify Sans";
+	-fx-text-fill: white;
+	-fx-font-size: 18px;
+	
+    -fx-pref-width: 300px;
+    -fx-border-color: yellow;
+    -fx-border-width: 3px;
+    -fx-background-color: transparent;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px; /* Bordas arredondadas (para o fundo) */
+    -fx-padding: 5;
+    
+    -fx-min-width: 220px;
+	-fx-max-width: 220px;
+    -fx-min-height: 32px;
+    -fx-max-height: 32px;
+}
+
+.searchSection .fetchButton {
+	-fx-font-family: "Pixelify Sans Medium";
+	-fx-font-size: 18px;
+	
+    -fx-background-color: #8FDE5E;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 5 15;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+.searchSection .button:hover {
+    -fx-background-color: #53DE5E;
+    -fx-cursor: hand;
+}
+
+.resultBox {
+	-fx-alignment: center;
+}
+
+.resultBox .errorBox {
+	-fx-font-family: "Pixelify Sans Medium";
+	-fx-font-size: 22px;
+	
+	-fx-background-color: rgba(0, 0, 0, 0.3);
+	
+	-fx-background-radius: 10px; /* Bordas arredondadas (para o fundo) */
+	
+	-fx-padding: 10px;
+	
+	-fx-min-width: 600px;
+	-fx-max-width: 600px;
+    -fx-min-height: 240px;
+    -fx-max-height: 240px;
+}
+
+.resultBox .errorBox .message {
+	-fx-text-fill: white;
+}
+
+.resultBox .cityResearched {
+	-fx-padding: 0 0 0 140;
+}
+
+.resultBox .cityResearched .cityAndCountryLabel {
+	-fx-font-family: "Pixelify Sans SemiBold";
+	-fx-font-size: 35px;
+    -fx-text-fill: white;
+}
+
+.resultBox .weatherDisplay {	
+	-fx-font-family: "Pixelify Sans Medium";
+	-fx-font-size: 22px;
+	
+	-fx-alignment: center;
+}
+
+.resultBox .weatherDisplay .currentDayCell {	
+	-fx-background-color: rgba(0, 0, 0, 0.1);	
+    -fx-background-radius: 10px; /* Bordas arredondadas (para o fundo) */
+	
+	-fx-min-width: 180px;
+	-fx-max-width: 180px;
+    -fx-min-height: 240px;
+    -fx-max-height: 240px;
+}
+
+.resultBox .weatherDisplay .currentDayCell:hover {
+	-fx-background-color: rgba(0, 0, 0, 0.3)
+}
+
+.resultBox .weatherDisplay .currentDayCell Label{
+	-fx-text-fill: white;
+}
+
+.resultBox .weatherDisplay .currentDayCell .todayLabel {
+	-fx-max-width: infinity;
+	
+	-fx-alignment: center;
+	
+	-fx-text-fill: white;
+}
+
+.resultBox .weatherDisplay .currentDayCell .currentTempLabel {
+	-fx-text-fill: #1796C5;
+}
+
+.resultBox .weatherDisplay .otherCells .daySelector {
+	-fx-alignment: center;
+}
+
+.resultBox .weatherDisplay .otherCells .daySelector .days {
+	-fx-alignment: center;
+	
+	-fx-background-color: rgba(0, 0, 0, 0.1);
+    -fx-background-radius: 10px; /* Bordas arredondadas (para o fundo) */
+	
+	-fx-min-width: 140px;
+	-fx-max-width: 140px;
+    -fx-min-height: 50px;
+    -fx-max-height: 50px;
+}
+
+.resultBox .weatherDisplay .otherCells .daySelector .days:hover {
+	-fx-background-color: rgba(0, 0, 0, 0.3);
+}
+
+.resultBox .clickedDay {
+	-fx-border-width: 3px;
+	-fx-border-radius: 10px; /* Bordas arredondadas (para o fundo) */
+	-fx-border-color: yellow;
+}
+
+.resultBox .weatherDisplay .otherCells .daySelector .days .monthAndDay {
+	-fx-min-height: 25px;
+    -fx-max-height: 25px;
+	
+	-fx-text-fill: white;
+	-fx-font-family: "VT323";
+	-fx-font-size: 25px;
+}
+
+.resultBox .weatherDisplay .otherCells .daySelector .days .weekday {
+	-fx-min-height: 22px;
+    -fx-max-height: 22px;
+    
+	-fx-text-fill: white;
+	-fx-font-family: "Pixelify Sans SemiBold";
+	-fx-font-size: 18px;
+}
+
+.resultBox .weatherDisplay .otherCells .hourlyPanel .hourlyCell {
+	-fx-background-color: rgba(0, 0, 0, 0.2);
+    -fx-background-radius: 10px; /* Bordas arredondadas (para o fundo) */
+	
+	-fx-min-width: 130px;
+	-fx-max-width: 130px;
+    -fx-min-height: 170px;
+    -fx-max-height: 170px;
+}
+
+.resultBox .weatherDisplay .otherCells .hourlyPanel .hourlyCell .hourLabel {	
+	-fx-max-width: infinity;
+	
+	-fx-alignment: center;
+	
+	-fx-text-fill: white;
+}
+
+.resultBox .weatherDisplay .otherCells .hourlyPanel .hourlyCell .tempLabel {
+	-fx-text-fill: #1796C5;
+}

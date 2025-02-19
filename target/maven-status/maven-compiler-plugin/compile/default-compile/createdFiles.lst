@@ -1,0 +1,10 @@
+com\abelatroz\weatherapp\application\WeatherApp.class
+com\abelatroz\weatherapp\model\ApiRequest.class
+com\abelatroz\weatherapp\service\WeatherService.class
+com\abelatroz\weatherapp\model\Main.class
+com\abelatroz\weatherapp\model\Weather.class
+com\abelatroz\weatherapp\controller\WeatherController.class
+com\abelatroz\weatherapp\model\WeatherData.class
+com\abelatroz\weatherapp\model\Forecast.class
+com\abelatroz\weatherapp\model\City.class
+com\abelatroz\weatherapp\view\AppUI.class
